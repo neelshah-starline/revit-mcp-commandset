@@ -1,6 +1,6 @@
 ﻿namespace RevitMCPCommandSet.Models.Common
 {
-    public class ViewInfo
+    public class CurrentViewInfo
     {
         public long Id { get; set; }
         public string UniqueId { get; set; }

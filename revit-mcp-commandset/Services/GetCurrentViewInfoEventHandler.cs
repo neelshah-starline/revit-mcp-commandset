@@ -7,7 +7,7 @@ namespace RevitMCPCommandSet.Services
     public class GetCurrentViewInfoEventHandler : IExternalEventHandler, IWaitableExternalEventHandler
     {
         // 执行结果
-        public ViewInfo ResultInfo { get; private set; }
+        public CurrentViewInfo ResultInfo { get; private set; }
 
         // 状态同步对象
         public bool TaskCompleted { get; private set; }
@@ -27,7 +27,7 @@ namespace RevitMCPCommandSet.Services
                 var doc = uiDoc.Document;
                 var activeView = doc.ActiveView;
 
-                ResultInfo = new ViewInfo
+                ResultInfo = new CurrentViewInfo
                 {
 #if REVIT2024_OR_GREATER
                     Id = (int)activeView.Id.Value,
